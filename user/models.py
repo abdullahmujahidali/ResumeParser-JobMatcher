@@ -78,8 +78,10 @@ class User(AbstractUser):
     location = models.CharField(max_length=255, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    raw_response = models.JSONField(blank=True, null=True)
     resume = models.FileField(upload_to='resumes/', validators=[
-        FileExtensionValidator(['pdf', 'doc', 'docx'])], blank=True, null=True)
+        FileExtensionValidator(['pdf'])], blank=True, null=True)
+    resume_path = models.CharField(max_length=255, blank=True, null=True)
 
     groups = models.ManyToManyField(
         'auth.Group',

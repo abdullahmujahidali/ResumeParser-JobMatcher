@@ -1,11 +1,12 @@
 from django.urls import include, path
-from .views import UserViewSet
+from .views import AIAssistantViewSet
 
 from rest_framework.routers import DefaultRouter
 
 assistant_router = DefaultRouter()
 
-assistant_router.register(r"assistant", UserViewSet, basename="aiassistant")
+assistant_router.register(
+    r"assistant", AIAssistantViewSet, basename="aiassistant")
 
 
 urlpatterns = [

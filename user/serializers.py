@@ -38,6 +38,14 @@ class ResumeSerializer(serializers.ModelSerializer):
         model = User
         fields = ['resume', 'email']
 
+    def create(self, validated_data):
+        resume = validated_data.pop('resume', None)
+        resume_path = validated_data.pop('resume_path', None)
+
+        user = User.objects.create(
+            resume=resume, resume_path=resume_path, **validated_data)
+        return user
+
 
 class UserSerializer(serializers.ModelSerializer):
     qualifications = QualificationSerializer(many=True)

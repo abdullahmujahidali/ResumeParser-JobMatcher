@@ -13,7 +13,7 @@ class AccountCreationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("email", "first_name", "last_name", "resume")
+        fields = ("email", "first_name", "last_name", "resume", "resume_path")
 
     def save(self, commit=True):
         """Save the provided password in hashed format."""
@@ -36,7 +36,7 @@ class AccountChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("password", "resume")
+        fields = ("password", "resume", "resume_path")
 
     def clean_password(self):
         return self.initial["password"]
@@ -72,7 +72,7 @@ class BaseAccountAdmin(BaseUserAdmin):
 
     form = AccountChangeForm
     add_form = AccountCreationForm
-    readonly_fields = ["id", "created_at", "modified_at"]
+    readonly_fields = ["id", "created_at", "modified_at", "email"]
     ordering = ["id"]
     list_display = [
         "id",
@@ -102,6 +102,8 @@ class BaseAccountAdmin(BaseUserAdmin):
                     "phone_number",
                     "location",
                     "resume",
+                    "resume_path",
+                    "raw_response"
                 )
             },
         ),
@@ -123,6 +125,7 @@ class BaseAccountAdmin(BaseUserAdmin):
                     "password",
                     "is_active",
                     "resume",
+                    "resume_path",
                 ),
             },
         ),
