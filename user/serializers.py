@@ -5,53 +5,38 @@ from user.models import User, Qualification, Experience, Project, Skill, Social
 class QualificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Qualification
-        fields = [
-            "university",
-            "degree",
-            "institute",
-            "grade_type",
-            "grade",
-            "start_year",
-            "end_year",
-            "major",
-        ]
+        fields = ["university", "degree", "institute", "grade_type",
+                  "grade", "start_year", "end_year", "major"]
 
 
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Experience
-        fields = [
-            "title",
-            "company",
-            "start_year",
-            "end_year",
-            "description",
-        ]
+        fields = ["title", "company", "start_year", "end_year", "description"]
 
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = [
-            "title",
-            "description",
-        ]
+        fields = ["title", "description"]
 
 
 class SkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = Skill
-        fields = [
-            "name",
-        ]
+        fields = ["name"]
 
 
 class SocialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Social
-        fields = [
-            "url",
-        ]
+        fields = ["url"]
+
+
+class ResumeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['resume', 'email']
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -127,3 +112,15 @@ class UserSerializer(serializers.ModelSerializer):
     def _create_or_update_related(self, related_data, user, model):
         for data in related_data:
             model.objects.update_or_create(user=user, **data)
+
+
+class AccountCreationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('email', 'password', 'username')
+        extra_kwargs = {
+            'password': {'write_only': True},
+        }
+
+    def create(self, validated_data):
+        return User.objects.create_account(**validated_data)
