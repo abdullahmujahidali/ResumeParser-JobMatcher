@@ -1,4 +1,5 @@
-# Django OpenAI Resume Parser and Job Matcher
+# Smart Resume Parser and Job Matcher
+
 
 A Django application that integrates with OpenAI to provide two main features:
 
