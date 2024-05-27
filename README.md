@@ -16,7 +16,7 @@ A Django application that integrates with OpenAI to provide two main features:
 
     ```bash
     git clone git@github.com:Carte-Blanche-Innovation-Integrated/SmartResumeJobMatcher.git
-    cd Django-OpenAI-Resume-JobMatcher
+    cd SmartResumeJobMatcher
     ```
 
 2. Set up a virtual environment:
