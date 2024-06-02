@@ -1,0 +1,26 @@
+# Read the Docs configuration file for Smart Resume Parser and Job Matcher project
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required: Specify the version of the configuration file
+version: 2
+
+# Build configuration
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.12"
+
+# Sphinx configuration
+sphinx:
+  configuration: source/conf.py
+
+
+
+python:
+  install:
+    - requirements: requirements.txt
+
+# Optionally, specify additional formats for the documentation
+formats:
+  - pdf
+  - epub
