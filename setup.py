@@ -1,14 +1,17 @@
 from setuptools import setup, find_packages
 
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()
-
 setup(
     name='smart-resume-job-matcher',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=[
+        'Django==5.0.6',
+        'openai==1.30.3',
+        'djangorestframework==3.15.1',
+        'python-dotenv==1.0.1',
+        'sphinx==7.3.7'
+    ],
     author='Abdullah Mujahid',
     author_email='abdullahmujahidali@gmail.com',
     description='A Django application for parsing resumes and matching job descriptions using OpenAI.',
