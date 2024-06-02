@@ -21,6 +21,11 @@ class UserView(viewsets.ModelViewSet):
 
     def get_object(self, request, *args, **kwargs):
         item = self.kwargs.get("pk")
+        try:
+            item = int(item)
+        except ValueError:
+            return Response({"error": "Invalid value for primary key"}, status=status.HTTP_400_BAD_REQUEST)
+
         return get_object_or_404(User, pk=item)
 
     def list(self, request):

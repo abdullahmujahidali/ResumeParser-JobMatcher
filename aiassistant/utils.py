@@ -6,6 +6,7 @@ def bulk_create_objects(model, data_list, user):
         return
     bulk_create_data = []
     if model == Qualification:
+        print("in here qualification: ", data_list)
         bulk_create_data = [
             model(
                 user=user,
@@ -14,25 +15,26 @@ def bulk_create_objects(model, data_list, user):
                 institute=item.get('institute', ''),
                 grade_type=item.get('grade_type', '4.0'),
                 grade=item.get('grade', 0.0),
-                start_year=int(item.get('start', 0)),
-                end_year=int(item.get('end', 0)),
+                start_year=item.get('start', ''),
+                end_year=item.get('end', ''),
                 major=item.get('major', '')
             ) for item in data_list
         ]
     elif model == Experience:
+        print("in here experience: ", data_list)
+
         bulk_create_data = [
             model(
                 user=user,
                 title=item.get('title', ''),
                 company=item.get('company', ''),
-                start_year=int(item.get('start', '').split()
-                               [-1]) if item.get('start') else 0,
-                end_year=int(item.get('end', '').split(
-                )[-1]) if item.get('end') and item.get('end') != 'Present' else None,
+                start_year=item.get('start', ''),
+                end_year=item.get('end', ''),
                 description=item.get('description', '')
             ) for item in data_list
         ]
     elif model == Skill:
+        print("in here skill: ", data_list)
         bulk_create_data = [
             model(
                 user=user,
@@ -40,6 +42,7 @@ def bulk_create_objects(model, data_list, user):
             ) for item in data_list
         ]
     elif model == Social:
+        print("in here social: ", data_list)
         bulk_create_data = [
             model(
                 user=user,
