@@ -1,0 +1,3 @@
+aiassistant
+core
+user

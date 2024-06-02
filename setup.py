@@ -15,7 +15,7 @@ setup(
     url='https://github.com/abdullahmujahidali/ResumeParser-JobMatcher',
     project_urls={
         'Source': 'https://github.com/abdullahmujahidali/ResumeParser-JobMatcher',
-        'Documentation': 'https://your-docs-url.com',
+        'Documentation': 'https://smart-resume-parser-and-job-matcher.readthedocs.io/en/latest/',
     },
     classifiers=[
         'Programming Language :: Python :: 3',
