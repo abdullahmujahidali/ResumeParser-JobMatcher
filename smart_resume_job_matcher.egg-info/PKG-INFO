@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: smart-resume-job-matcher
-Version: 1.0.0
+Version: 1.0.1
 Summary: A Django application for parsing resumes and matching job descriptions using OpenAI.
 Home-page: https://github.com/abdullahmujahidali/ResumeParser-JobMatcher
 Author: Abdullah Mujahid

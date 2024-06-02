@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+
 setup(
     name='smart-resume-job-matcher',
     version='1.0.1',
