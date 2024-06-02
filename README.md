@@ -15,7 +15,7 @@ A Django application that integrates with OpenAI to provide two main features:
 1. Clone the repository:
 
     ```bash
-    git clone git@github.com:Carte-Blanche-Innovation-Integrated/SmartResumeJobMatcher.git
+    git clone git@github.com:abdullahmujahidali/ResumeParser-JobMatcher.git
     cd SmartResumeJobMatcher
     ```
 

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Usage Instructions &#8212; resume-parse-match  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Views" href="views.html" />
+    <link rel="prev" title="Installation Guide" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="usage-instructions">
+<h1>Usage Instructions<a class="headerlink" href="#usage-instructions" title="Link to this heading">¶</a></h1>
+<section id="resume-parser">
+<h2>Resume Parser<a class="headerlink" href="#resume-parser" title="Link to this heading">¶</a></h2>
+<p>Endpoint: <cite>/assistant/resume-parser/</cite></p>
+<p>Send a POST request to this endpoint with the resume file to parse and store the extracted details.</p>
+<dl class="simple">
+<dt>Input Data:</dt><dd><ul class="simple">
+<li><p><cite>resume</cite> (FileField)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Output:</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“message”: “Resume parsed and saved successfully”,
+“user_id”: “e6cf8c90-6685-4843-8ea2-97ab728ec5e6”,
+“content”: {</p>
+<blockquote>
+<div><p>“first_name”: “Abdullah”,
+“last_name”: “Mujahid”,
+“email”: “<a class="reference external" href="mailto:myemail&#37;&#52;&#48;gmail&#46;com">myemail<span>&#64;</span>gmail<span>&#46;</span>com</a>”,
+“phone_number”: “+92322xxxxxx”,
+“location”: “Lahore, Pakistan”,
+“socials”: [“Linkedin”, “Github”, “Google Scholar”, “Portfolio”],
+“qualifications”: [</p>
+<blockquote>
+<div><dl class="simple">
+<dt>{</dt><dd><p>“university”: “University of Management &amp; Technology”,
+“degree”: “Bachelor”,
+“institute”: “Lahore Pakistan”,
+“grade_type”: “4.0”,
+“grade”: 3.57,
+“start”: “August 2017”,
+“end”: “May 2021”,
+“major”: “Computer Science”</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>],
+“experience”: […],
+“skills”: […],
+“projects”: […]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<section id="id5">
+<h3>}<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+<section id="job-matcher">
+<h2>Job Matcher<a class="headerlink" href="#job-matcher" title="Link to this heading">¶</a></h2>
+<p>Endpoint: <cite>/assistant/job-matcher/</cite></p>
+<p>Send a POST request to this endpoint to match the user’s resume data against a job description and get the matching score and description.</p>
+<p>Input Data:</p>
+<p><a href="#id6"><span class="problematic" id="id7">``</span></a><a href="#id8"><span class="problematic" id="id9">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“resume_data”: { … },
+“job_description”: “Job brief …”</p>
+</div></blockquote>
+<section id="id10">
+<h3>}<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>Output:</p>
+<p><a href="#id11"><span class="problematic" id="id12">``</span></a><a href="#id13"><span class="problematic" id="id14">`</span></a>json
+{</p>
+<blockquote>
+<div><p>“score”: 90,
+“description”: “Abdullah Mujahid is an excellent fit for the Web Developer position based on the provided job description. His experience as a Senior Full Stack Software Engineer and Development Lead aligns well with the responsibilities of building websites from concept to completion. Abdullah’s proficiency in Django, React.js, and Agile methodologies, as well as his strong background in HTML/CSS and familiarity with JavaScript, reinforces his coding and design capabilities. His involvement in web development projects like ‘Gladiator Finance - NFT Marketplace’ and ‘BigBrains - E-learning Platform’ highlights his ability to integrate data from back-end services and develop robust web applications. Additionally, his solid understanding of programming languages, network diagnostics, and SEO further supports his suitability for the role.”</p>
+</div></blockquote>
+</section>
+<section id="id15">
+<h3>}<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">resume-parse-match</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#resume-parser">Resume Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#job-matcher">Job Matcher</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializers.html">Serializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Me</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apiref.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">MIT License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation Guide</a></li>
+      <li>Next: <a href="views.html" title="next chapter">Views</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Abdullah Mujahid.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
