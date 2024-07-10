@@ -7,7 +7,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'Django==5.0.6',
+        'Django==5.0.7',
         'openai==1.30.3',
         'djangorestframework==3.15.1',
         'python-dotenv==1.0.1',
